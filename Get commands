@@ -1,0 +1,29 @@
+package Selenium1;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+
+public class Sel2 {
+
+	public static void main(String[] args) {
+		
+		System.setProperty("Webdiver.edge.driver","D:\\Microsoft edge\\msedge.exe");
+		WebDriver driver=new EdgeDriver();
+		
+		
+		
+		//Get commands
+		
+		driver.get("https://www.selenium.dev/downloads/");
+	    System.out.println(driver.getTitle());
+	   
+	   String url=driver.getCurrentUrl();
+	   System.out.println("the url is"+url);
+	   System.out.println("....................");
+	  String source=driver.getPageSource();
+	  System.out.println("the source is"+source);
+	   
+	   
+	}
+
+}
