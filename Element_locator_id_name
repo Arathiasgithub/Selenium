@@ -1,0 +1,34 @@
+package Selenium1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
+
+public class ElementLoc1 {
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("Webdiver.edge.driver","D:\\Microsoft edge\\msedge.exe");
+		WebDriver driver=new EdgeDriver();
+		  driver.get("https://www.saucedemo.com/");
+		  
+		  
+		  WebElement username = driver.findElement(By.id("user-name"));
+		  username.sendKeys("standard_user");
+		  
+		  WebElement pwd = driver.findElement(By.id("password"));
+		  pwd.sendKeys("secret_sauce");
+		  
+		  WebElement login = driver.findElement(By.id("login-button"));
+		  login.click(); 
+		  
+		/*  WebElement username = driver.findElement(By.name("user-name"));
+		  username.sendKeys("standard_user");
+		  
+		  WebElement pwd = driver.findElement(By.name("password"));
+		  pwd.sendKeys("secret_sauce");
+		  
+		  WebElement login = driver.findElement(By.name("login-button"));
+		  login.click();*/
+		  
+		 }
+}
