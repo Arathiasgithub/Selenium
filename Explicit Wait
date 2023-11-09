@@ -1,0 +1,29 @@
+package Selenium1;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class ExplicitWait {
+
+	public static void main(String[] args) {
+		System.setProperty("webdiver.edge.driver", "D:\\Microsoft edge\\msedge.exe");
+		WebDriver driver=new EdgeDriver();
+		driver.get("https://demo.automationtesting.in/Register.html");
+		
+		WebDriverWait wait1=new WebDriverWait(driver,Duration.ofSeconds(20));
+		WebElement frstname=driver.findElement(By.xpath("//*[@id=\"basicBootstrapForm\"]/div[1]/div[1]/input"));
+		//frstname.sendKeys("techh");
+		wait1.until(ExpectedConditions.visibilityOf(frstname)).sendKeys("ghjj");
+		
+		WebElement radio=driver.findElement(By.xpath("//*[@id=\"basicBootstrapForm\"]/div[5]/div/label[1]"));
+	   wait1.until(ExpectedConditions.elementToBeSelected(radio));
+	
+	}
+
+}
